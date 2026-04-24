@@ -1,4 +1,12 @@
+# Get user input
+season = input("Enter the season: ").lower()
+plant_type = input("Enter the plant type: ").lower()
+
+
 def get_season_advice(season):
+    """Returns gardening advice based on season"""
+
+    # Season-based logic
     if season == "summer":
         return "Water your plants regularly and provide some shade.\n"
     elif season == "winter":
@@ -8,6 +16,9 @@ def get_season_advice(season):
 
 
 def get_plant_advice(plant_type):
+    """Returns gardening advice based on plant type"""
+
+    # Plant-type-based logic
     if plant_type == "flower":
         return "Use fertiliser to encourage blooms."
     elif plant_type == "vegetable":
@@ -16,15 +27,9 @@ def get_plant_advice(plant_type):
         return "No advice for this type of plant."
 
 
-def generate_advice(season, plant_type):
-    advice = ""
-    advice += get_season_advice(season)
-    advice += get_plant_advice(plant_type)
-    return advice
+# Generate combined output
+advice = get_season_advice(season) + get_plant_advice(plant_type)
 
-
-# Hardcoded values still fine for THIS issue
-season = "summer"
-plant_type = "flower"
-
-print(generate_advice(season, plant_type))
+# Output result
+print("\nGardening Advice:")
+print(advice)
